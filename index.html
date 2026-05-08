@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Campus Connect | Department Management System</title>
+    <!-- Bootstrap 5 CSS + Icons + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-2" href="index.html">
+                <i class="fas fa-graduation-cap text-primary me-2"></i>Campus Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#howitworks">How it works</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#stories">Stories</a></li>
+                    <!-- COURSES DROPDOWN (Multi-level with three departments) -->
+                   <!--- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold" href="#" id="coursesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-book-open me-1"></i>Courses
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                            
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#"><i
+                                        class="fas fa-laptop-code me-2"></i>Computer Science</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item course-branch-link" href="#"
+                                            data-branch="btech-cs">B.Tech (CSE)</a></li>
+                                    <li><a class="dropdown-item course-branch-link" href="#" data-branch="bca">BCA</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#"><i
+                                        class="fas fa-chart-line me-2"></i>Management</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item course-branch-link" href="#"
+                                            data-branch="bcom">B.Com</a></li>
+                                    <li><a class="dropdown-item course-branch-link" href="#" data-branch="bba">BBA</a>
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#"><i
+                                        class="fas fa-gavel me-2"></i>Law</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item course-branch-link" href="#" data-branch="llb">LL.B</a>
+                                    </li>
+                                    <li><a class="dropdown-item course-branch-link" href="#"
+                                            data-branch="ba-llb">BA.LL.B</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>-->
+                <div class="d-flex gap-2">
+                    <a href="login_updated.php" class="btn btn-outline-custom btn-sm px-4" id="loginBtnNav"><i
+                            class="fas fa-sign-in-alt me-2"></i>Login</a>
+                    <a href="register_updated.php" class="btn btn-primary-custom btn-sm px-4" id="getStartedBtnNav">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4" id="appRoot">
+
+        <!-- ============ HOME PAGE CONTENT ============ -->
+
+        <div id="homePageContent">
+
+            <!-- Hero Section -->
+
+            <div class="hero" id="home">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h1 class="display-4 fw-bold">Built for students, <span class="text-gradient">powered for
+                                lecturers</span></h1>
+                        <p class="lead mt-3">Transform the way your campus communicates, teaches, and learns. Campus
+                            Connect brings every course, announcement, and resource into one intuitive workspace—so you
+                            can focus on learning, not logistics.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="register_updated.php" class="btn btn-primary-custom px-5 py-3" id="heroGetStarted">Get
+                                Started </a>
+                            <a href="login_updated.php" class="btn btn-outline-secondary px-5 py-3" id="heroExplore">Explore
+                                the dashboard</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="hero-image-container">
+                            <img src="college.webp" alt="Students collaborating on campus" class="hero-image">
+                            <div class="hero-image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+
+            <div class="mt-5 pt-4" id="features" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="fw-bold text-center mb-5">Why Choose Campus Connect?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card p-4 text-center">
+                            <div class="icon-bg mx-auto mb-4"><i class="fas fa-folder-tree fa-2x"></i></div>
+                            <h5 class="fw-bold">Comprehensive Course Management</h5>
+                            <p class="text-secondary">Easily access and manage course materials for all your classes in
+                                one place.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card p-4 text-center">
+                            <div class="icon-bg mx-auto mb-4"><i class="fas fa-user-graduate fa-2x"></i></div>
+                            <h5 class="fw-bold">Role-Based Access</h5>
+                            <p class="text-secondary">Specifically designed interfaces for both students and lecturers,
+                                ensuring optimal experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card p-4 text-center">
+                            <div class="icon-bg mx-auto mb-4"><i class="fas fa-cloud-upload-alt fa-2x"></i></div>
+                            <h5 class="fw-bold">Seamless File Sharing</h5>
+                            <p class="text-secondary">Upload and access course materials in any format with our flexible
+                                file management system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+
+            <div class="mt-5 pt-4" id="howitworks" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="fw-bold text-center mb-3">Everything your campus needs, in three simple steps</h2>
+                <p class="text-center text-secondary mb-5">Launch your digital campus in minutes. Import courses, invite
+                    your community, and stay connected.</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="step-card p-4 text-center">
+                            <div class="step-number mx-auto mb-3">1</div>
+                            <h5 class="fw-bold">Create your departments</h5>
+                            <p>Set up departments, courses, and shared resource libraries in one workspace.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step-card p-4 text-center">
+                            <div class="step-number mx-auto mb-3">2</div>
+                            <h5 class="fw-bold">Invite students and lecturers</h5>
+                            <p>Assign roles and permissions so every user sees exactly what they need.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="step-card p-4 text-center">
+                            <div class="step-number mx-auto mb-3">3</div>
+                            <h5 class="fw-bold">Track engagement</h5>
+                            <p>Monitor announcements, uploads, and participation from a single dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 bg-white p-4 rounded-4 shadow-sm">
+                    <div class="col-12">
+                        <h5 class="fw-semibold"><i class="fas fa-rocket text-primary me-2"></i> Built-in productivity
+                            boosters</h5>
+                        <ul class="row list-unstyled mt-3">
+                            <li class="col-md-6 mb-2"><i class="fas fa-bell text-primary me-2"></i> Automated reminders
+                                for assignments and deadlines</li>
+                            <li class="col-md-6 mb-2"><i class="fas fa-database text-primary me-2"></i> Secure file
+                                storage for lecture notes and media</li>
+                            <li class="col-md-6 mt-2"><i class="fas fa-chart-line text-primary me-2"></i> Insights
+                                dashboard for participation trends</li>
+                            <li class="col-md-6 mt-2"><i class="fas fa-mobile-alt text-primary me-2"></i>
+                                Mobile-friendly access on any device</li>
+                        </ul>
+                        <div class="text-center mt-4"><button class="btn btn-primary-custom px-5 py-2"
+                                id="startBuildingBtn">Start building your campus →</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stories Section -->
+
+            <div class="mt-5 pt-4" id="stories" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="fw-bold text-center mb-3">Success Stories</h2>
+                <p class="text-center text-secondary mb-5">Join 1000+ campuses already transforming education</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="story-card p-4">
+                            <i class="fas fa-quote-left text-primary fs-1 opacity-50 mb-3"></i>
+                            <p class="mt-2 fst-italic">"Campus Connect reduced our faculty workload by 40%. Students
+                                never miss updates!"</p>
+                            <div class="fw-bold mt-3">— Dr. Meera Sharma, Delhi</div>
+                            <div class="text-warning small">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="story-card p-4">
+                            <i class="fas fa-quote-left text-primary fs-1 opacity-50 mb-3"></i>
+                            <p class="mt-2 fst-italic">"The notes upload and download feature is seamless. Perfect for
+                                hybrid learning."</p>
+                            <div class="fw-bold mt-3">— Prof. R. K. Verma</div>
+                            <div class="text-warning small">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="story-card p-4">
+                            <i class="fas fa-quote-left text-primary fs-1 opacity-50 mb-3"></i>
+                            <p class="mt-2 fst-italic">"As a student, I love having all branch materials organized in
+                                one dashboard."</p>
+                            <div class="fw-bold mt-3">— Anjali, B.Tech CSE</div>
+                            <div class="text-warning small">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ DYNAMIC BRANCH DASHBOARD ============ -->
+
+        <div id="branchDashboard" style="display: none;">
+            <div class="branch-header d-flex justify-content-between align-items-center flex-wrap" data-aos="fade-down">
+                <div>
+                    <h3 id="branchTitle" class="fw-bold mb-1"><i class="fas fa-building me-2"></i> Branch Name</h3>
+                    <p class="text-secondary mb-0"><i class="fas fa-info-circle me-1"></i> Lecturer uploads notes &
+                        notices | Students view & download</p>
+                </div>
+                <button class="btn btn-outline-secondary" id="backToHomeBtn"><i class="fas fa-arrow-left me-2"></i> Back
+                    to Home</button>
+            </div>
+
+            <!-- Role Switcher -->
+            <div class="mb-4 d-flex gap-3 align-items-center bg-light p-3 rounded-4 w-auto">
+                <span class="fw-semibold"><i class="fas fa-user-shield me-1"></i> View as:</span>
+                <button id="roleLecturerBtn" class="btn btn-outline-primary px-4"><i
+                        class="fas fa-chalkboard-teacher me-2"></i> Lecturer </button>
+                <button id="roleStudentBtn" class="btn btn-outline-secondary px-4"><i
+                        class="fas fa-user-graduate me-2"></i> Student</button>
+            </div>
+
+            <!-- Lecturer Panel -->
+            <div id="lecturerPanel" class="upload-area mb-4" style="display: none;">
+                <h5 class="mb-3"><i class="fas fa-upload me-2 text-primary"></i>Professor / Lecturer Panel</h5>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="fw-semibold mb-2"><i class="fas fa-file-alt me-1"></i> Upload Notes</label>
+                        <input type="file" id="noteFile" class="form-control mb-2"
+                            accept=".pdf,.doc,.docx,.ppt,.pptx,.txt">
+                        <input type="text" id="noteTitle" class="form-control mb-2"
+                            placeholder="Subject Name (e.g., Data Structures)">
+                        <input type="text" id="noteSubject" class="form-control mb-2"
+                            placeholder="Subject Code / Semester (e.g., CS301, Sem 3)">
+                        <input type="text" id="professorName" class="form-control mb-2" placeholder="Professor Name">
+                        <button id="uploadNoteBtn" class="btn btn-primary w-100"><i
+                                class="fas fa-cloud-upload-alt me-2"></i>Upload Note</button>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <label class="fw-semibold mb-2"><i class="fas fa-bullhorn me-1"></i> Post Academic
+                            Notice</label>
+                        <input type="text" id="noticeTitle" class="form-control mb-2" placeholder="Notice Headline">
+                        <textarea id="noticeDesc" rows="3" class="form-control mb-2"
+                            placeholder="Notice details..."></textarea>
+                        <button id="postNoticeBtn" class="btn btn-warning w-100"><i
+                                class="fas fa-paper-plane me-2"></i>Post Notice</button>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Content area: Notes -->
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white fw-bold py-3"><i
+                                class="fas fa-sticky-note text-primary me-2"></i>Course Notes & Materials</div>
+                        <div class="card-body" id="notesListContainer" style="max-height: 500px; overflow-y: auto;">
+                            <div class="text-center text-muted py-4"><i
+                                    class="fas fa-inbox fa-3x mb-2 opacity-50"></i><br>No notes uploaded yet</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white fw-bold py-3"><i
+                                class="fas fa-bullhorn text-warning me-2"></i>Academic Notices</div>
+                        <div class="card-body" id="noticesListContainer" style="max-height: 500px; overflow-y: auto;">
+                            <div class="text-center text-muted py-4"><i
+                                    class="fas fa-envelope-open-text fa-3x mb-2 opacity-50"></i><br>No notices posted
+                                yet</div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-5 pb-3" id="globalFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white fw-bold"><i class="fas fa-graduation-cap me-2"></i>Campus Connect</h5>
+                    <p class="small opacity-75">Empowering education through smart technology. Bridging the gap between
+                        lecturers and students.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="text-white fw-bold">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#features" class="text-decoration-none">Features</a></li>
+                        <li class="mb-2"><a href="#howitworks" class="text-decoration-none">How it works</a></li>
+                        <li class="mb-2"><a href="#stories" class="text-decoration-none">Stories</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="text-white fw-bold">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Guides</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-white fw-bold">Stay updated</h6>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <p class="small mt-2 opacity-75">Get the latest updates and news</p>
+                </div>
+            </div>
+            <hr class="opacity-25">
+            <div class="text-center small opacity-75">© 2026 Campus Connect — Bridging learning & collaboration | All
+                Rights Reserved</div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-sign-in-alt text-primary me-2"></i>Welcome Back
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-secondary">Demo credentials:</p>
+                    <div class="alert alert-info">
+                        <strong>Lecturer Access:</strong> Use any branch to upload notes<br>
+                        <strong>Student Access:</strong> View and download materials<br>
+                        <strong>Tip:</strong> Click Courses → Select any department → Toggle role
+                    </div>
+                    <button class="btn btn-primary w-100" data-bs-dismiss="modal">Continue to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
